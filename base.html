@@ -1,0 +1,42 @@
+<html>
+    <head><title>Leaf Image Classification</title>{% load static %}
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/home.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/login.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/forgot.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/signup.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/about.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/contact.css">
+    <link rel="stylesheet" type="text/css" href="/static/leaf_classify_app/font/css/font-awesome.css">
+    </head>
+    <style type="text/css">a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+}</style>
+<body>
+    <header>
+<img src="/static/leaf_classify_app/logo.png" style="margin:35px;width:300px;height:70px;">
+
+ <a href="/leaf_classify_app/" style="position:relative;top:-50px;left:560px;text-decoration:none;color: white;">Home</a>
+ <a href="/leaf_classify_app/about/" style="position:relative;top:-50px;left:590px;text-decoration:none;color: white;">About us</a>
+ <a href="/leaf_classify_app/contact/" style="position:relative;top:-50px;left:620px;text-decoration:none;color: white;">Contact us</a>
+ {% if request.session.uid %}
+            <a href="{% url  'logout' %}" style="position:relative;top:-50px;left:650px;text-decoration:none;color: white;">Logout</a>
+        {% else %}
+                <a href="{% url  'login' %}" style="position:relative;top:-50px;left:650px;text-decoration:none;color: white;">Login</a>&nbsp;
+        {% endif %}
+        
+
+
+
+   </header>
+{% block content %}
+{% endblock %}
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+  {% block content %}
+  {% load static %}
+     <img src="/static/leaf_classify_app/home.jpg" alt="no img" height="600px;" width="100%" style="margin-top:-50px;">
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;position:relative;top:-250px;left:550px;">Upload Picture</button>
+
+<div id="id01" class="modal">
+  {% load admin_urls %}
+  <form name ="form1" class="modal-content animate" action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token  %}
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <h3>:NOTE:<p>UPLOAD LEAF IMAGE CONTAINING WHITE BACKGROUND</p></h3>
+      <h1>Upload Picture</h1>
+     <input id="pic" type="file" name="pic" accept="image/*">
+
+    <div class="container" style="background-color:#f1f1f1;margin:15px;">
+        <input type="submit" value="submit" onmouseup="document.getElementById('id02').style.display='none'" style="width:100px;height:50px;position:relative;top:-4px;background-color:green">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+  </div>
+  </form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
+</script>
+<footer>
+<p style="padding-top:-250px;position:absolute;left:100px;top:0px">Follow us on : </p>
+<i class="fa fa-whatsapp fa-lg " style="position:absolute;left:225px;top:20px;"></i>
+<i class="fa fa-instagram fa-lg " style="position:absolute;left:265px;top:20px;"></i>
+<i class="fa fa-twitter fa-lg " style="position:absolute;left:305px;top:20px;"></i>
+<i class="fa fa-facebook fa-lg " style="position:absolute;left:355px;top:20px;"></i>
+    <p style="position:absolute;left:900px;top:0px">&COPY copyright 2019-Leaf Image Classification</p>
+</footer>
+
+
+     {% endblock %}

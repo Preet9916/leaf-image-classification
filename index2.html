@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% load static %}
+<h1 style="color:green;margin-left:50%;position:relative;top:200px;font-size:40px; ">{{Answer}}</h1>
+<img src="\static\leaf_classify_app\reply.jpg" alt="image" style="height:300px;width:300px;margin-left:50px;">
+<img src="\static\leaf_classify_app\Arrow.png" alt="arrow" style="height:100px;width:200px;
+position:relative;top:-100px;left:100px;">
+<h2 style="margin-left:5%;color:green;">Your Uploaded Image</h3>
+<h3 style="margin-left:42%"><a href="/leaf_classify_app/home/">Click here</a> To Go Back To Home Page</h3>
+{% endblock %}
